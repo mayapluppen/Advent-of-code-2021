@@ -15,33 +15,26 @@ def currentDepth(diveDataFile):
 
             currentCourse = line.split()[0]
             units = line.split()[1]
-            print(currentCourse)
-            print(units)
             
             if currentCourse == "up":
-                print(currentCourse + '-> Up = Decreased by ' + units + ' units.')
                 totalcurrentSeaFloorDepthDecreased = totalcurrentSeaFloorDepthDecreased + 1
                 currentDepth = currentDepth - int(units)
             elif currentCourse == "down":
-                print(currentCourse + '-> Down = Increased by ' + units + ' units.')
                 totalcurrentSeaFloorDepthIncreased = totalcurrentSeaFloorDepthIncreased + 1 
                 currentDepth = currentDepth + int(units)
             elif currentCourse == "forward":
-                print(currentCourse + '-> Forward = Increased by ' + units + ' units.')
                 totalHorizontalPositionIncreased = totalHorizontalPositionIncreased + 1 
                 currentHorizontalPosition = currentHorizontalPosition + int(units)
         
             previousSeaFloorDepth = int(currentDepth)
           
-    
-    msg = "Total down? Answer: " + str(totalcurrentSeaFloorDepthIncreased)
-    print(msg)
-    msg = "Total up? Answer: " + str(totalcurrentSeaFloorDepthDecreased)
-    print(msg)
-    msg = "Current depth? Answer: " +  str(currentDepth)
-    print(msg) 
-    msg = "Current horizontal position? Answer: " +  str(currentHorizontalPosition)
-    print(msg) 
+    print("-----------DAY 2 PART 1: Submarine Position -----------")
+    print(" ")
+    print("Total down? Answer: " + str(totalcurrentSeaFloorDepthIncreased))
+    print("Total up? Answer: " + str(totalcurrentSeaFloorDepthDecreased))
+    print("Current depth? Answer: " +  str(currentDepth))
+    print("Current horizontal position? Answer: " +  str(currentHorizontalPosition))
     resultmsg = "The result is DEPTH x HORIZAONTAL POSITION = " + str(currentDepth*currentHorizontalPosition) 
     print(resultmsg)
+    print(" ")
     diveDataFile.close() 

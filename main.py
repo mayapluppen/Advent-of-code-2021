@@ -3,11 +3,7 @@ from unicodedata import decimal
 import math
 import sonarSweep as sonarSweep
 import submarinePosition as submarinePosition
-
-msg= "Time to Dive!"                                         
-print(msg.center(100))
-
-print(msg)
+import submarineAim as submarineAim
 
 window = gui.Tk()
 
@@ -15,7 +11,10 @@ window = gui.Tk()
 dataFile = open('sonarData.txt')
 sonarSweep.currentSeaFloorDepth(dataFile,'Vertical')
 
-#Day 2: Submarine position
+#Day 2 part 1: Submarine position
 dataFile = open('diveData.txt')
 submarinePosition.currentDepth(dataFile)
 
+#Day 2 part 2: Submarine position using the aim-algorithm
+dataFile = open('diveData.txt')
+submarineAim.currentPosition(dataFile)
